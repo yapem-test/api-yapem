@@ -1,14 +1,16 @@
+version: '3.8'
+
 services:
-  api-yapem-banco:
-    container_name: api-yapem
-    hostname: api-yapem
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: api-yapem
-    ports:
-      - "5432:5432"
-    volumes:
-      - ~/PostgreeDB:/var/lib/postgresql/data
+    api-yapem-banco:
+        container_name: api-yapem
+        hostname: api-yapem-database
+        image: postgres:latest
+        restart: always
+        environment:
+            POSTGRES_USER: ${POSTGRES_USER}
+            POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+            POSTGRES_DB: ${POSTGRES_DATABASENAME}
+        ports:
+            - '5432:5432'
+        volumes:
+            - ~/PostgreeDB:/var/lib/postgresql/data
