@@ -1,0 +1,14 @@
+services:
+  api-yapem-banco:
+    container_name: api-yapem
+    hostname: api-yapem
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: api-yapem
+    ports:
+      - "5432:5432"
+    volumes:
+      - ~/PostgreeDB:/var/lib/postgresql/data
