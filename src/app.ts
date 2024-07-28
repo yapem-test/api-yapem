@@ -3,6 +3,7 @@ import { homeRoute } from './routes/homeRoute';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet';
+import sequelizeConnection from './config/database';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ class App {
     public app: Express;
 
     constructor() {
+        this.connectionDatabase();
         this.app = express();
         this.middlewares();
         this.routes();
@@ -40,7 +42,7 @@ class App {
 
     async connectionDatabase() {
         try {
-            // await sql.connect(database.url);
+            await sequelizeConnection.authenticate();
             console.log('[server]: Connection database success');
         } catch (err) {
             console.error('[server]: Error connecting database', err);

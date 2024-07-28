@@ -44,6 +44,8 @@ build/Release
 
 # Dependency directories
 node_modules/
+package-lock.json
+ExemploTestesComClasses
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
@@ -144,6 +146,6 @@ dist
 # Environment variables
 .env
 
-# Dist files 
+# Dist files
 dist
 # End of https://www.toptal.com/developers/gitignore/api/node
