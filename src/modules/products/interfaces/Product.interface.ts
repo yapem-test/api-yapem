@@ -1,8 +1,6 @@
-export interface IProduct {
-    id: number;
+import { IBaseEntity } from "../../../base/entity/interfaces/IBaseEntity";
+export interface IProduct extends IBaseEntity {
     name: string;
     price: number;
     description: string;
-    createdAt: Date;
-    updatedAt: Date;
 }
